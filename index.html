@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kisaan.AI — Intelligent Farming & Market System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ============================================================
+     LANDING PAGE
+============================================================ -->
+<section id="screen-landing" class="screen active">
+  <nav class="nav">
+    <div class="brand">
+      <div class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2v20M2 12c0-5.5 4.5-10 10-10M22 12c0 5.5-4.5 10-10 10"/></svg></div>
+      Kisaan.AI
+    </div>
+    <div class="nav-links">
+      <a href="#features">Platform</a>
+      <a href="#stats">Impact</a>
+      <a href="#testimonials">Farmers</a>
+      <a href="#footer">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <button class="btn btn-ghost" onclick="showScreen('screen-auth');setAuthTab('login')">Log in</button>
+      <button class="btn btn-primary" onclick="showScreen('screen-auth');setAuthTab('register')">Get started →</button>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-field-grid" id="fieldGrid"></div>
+    <div class="hero-copy">
+      <div class="eyebrow"><span class="dot"></span> AI model live on 40,000+ fields</div>
+      <h1>Farming decisions,<br>backed by <em>data</em>,<br>not guesswork.</h1>
+      <p>Kisaan.AI reads your soil, sky and market in real time — then tells you exactly what to grow, when to water, and where to sell for the best price.</p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" onclick="showScreen('screen-auth');setAuthTab('register')">Start free trial</button>
+        <button class="btn btn-outline" onclick="showScreen('screen-dashboard')">View live demo</button>
+      </div>
+      <div class="hero-stats">
+        <div><div class="num">2.1L+</div><div class="lbl">Farmers onboarded</div></div>
+        <div><div class="num">94.6%</div><div class="lbl">Crop model accuracy</div></div>
+        <div><div class="num">₹340Cr</div><div class="lbl">Produce traded</div></div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="ai-card">
+        <div class="ai-card-head">
+          <span class="tag">AI Recommendation</span>
+          <span class="live"><span class="dot"></span>Live · Field #A-104</span>
+        </div>
+        <div class="ring-wrap">
+          <svg class="ring pring" viewBox="0 0 120 120">
+            <circle class="bg" cx="60" cy="60" r="52"/>
+            <circle class="fg" cx="60" cy="60" r="52" stroke-dasharray="326.7" stroke-dashoffset="27"/>
+          </svg>
+          <div class="ring-info">
+            <div class="crop">Basmati Rice</div>
+            <div class="conf">Confidence <b>91.7%</b></div>
+          </div>
+        </div>
+        <div class="mini-grid">
+          <div class="mini-stat"><div class="v">4.8t</div><div class="k">Exp. yield/acre</div></div>
+          <div class="mini-stat"><div class="v">₹58k</div><div class="k">Est. profit</div></div>
+          <div class="mini-stat"><div class="v">6.8pH</div><div class="k">Soil pH</div></div>
+        </div>
+        <div class="float-card f1">
+          <div class="ic" style="background:rgba(58,175,224,.15);">☀️</div>
+          <div class="txt"><div class="t1">32°C, Clear</div><div class="t2">Ideal sowing window</div></div>
+        </div>
+        <div class="float-card f2">
+          <div class="ic" style="background:rgba(29,184,118,.15);">📈</div>
+          <div class="txt"><div class="t1">Rice ₹2,140/qtl</div><div class="t2">↑ 4.2% this week</div></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section" id="features">
+    <div class="section-head">
+      <div class="eyebrow" style="margin:0 auto 16px;width:fit-content;">Platform</div>
+      <h2>One system, every decision on the farm</h2>
+      <p>From soil to sale — six AI engines working together so you never have to guess.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat-card"><div class="feat-ic" style="background:rgba(29,184,118,.12);">🌾</div><h3>AI Crop Recommendation</h3><p>Input soil type, pH, rainfall and land size — get the crop with the highest expected profit, ranked by confidence.</p></div>
+      <div class="feat-card"><div class="feat-ic" style="background:rgba(217,85,63,.12);">🔬</div><h3>Disease Detection</h3><p>Upload a leaf photo and get an instant diagnosis with treatment, dosage and organic alternatives.</p></div>
+      <div class="feat-card"><div class="feat-ic" style="background:rgba(58,175,224,.12);">🌦️</div><h3>7-Day Weather Intelligence</h3><p>Hyperlocal forecasts with rain-risk heatmaps and irrigation alerts, right down to your field.</p></div>
+      <div class="feat-card"><div class="feat-ic" style="background:rgba(214,163,43,.12);">💧</div><h3>Smart Irrigation</h3><p>Live soil-moisture graphs and one-tap motor control, so nothing is watered on guesswork.</p></div>
+      <div class="feat-card"><div class="feat-ic" style="background:rgba(29,184,118,.12);">📊</div><h3>Live Market Prices</h3><p>Compare mandi prices across cities in real time and list your produce to buyers directly.</p></div>
+      <div class="feat-card"><div class="feat-ic" style="background:rgba(58,175,224,.12);">🏛️</div><h3>Govt. Scheme Matching</h3><p>See every subsidy and scheme you're eligible for, with a one-click application tracker.</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="stats">
+    <div class="stats-band">
+      <div class="stat-item"><div class="n">2,10,482</div><div class="l">Active farmers</div></div>
+      <div class="stat-item"><div class="n">18.4L</div><div class="l">Acres monitored</div></div>
+      <div class="stat-item"><div class="n">94.6%</div><div class="l">Model accuracy</div></div>
+      <div class="stat-item"><div class="n">₹340Cr</div><div class="l">Produce traded YTD</div></div>
+    </div>
+  </section>
+
+  <section class="section" id="testimonials">
+    <div class="section-head">
+      <div class="eyebrow" style="margin:0 auto 16px;width:fit-content;">Farmers</div>
+      <h2>Trusted across 14 states</h2>
+    </div>
+    <div class="test-grid">
+      <div class="test-card"><div class="test-stars">★★★★★</div><p>"The disease detection caught blight on my tomato crop three days before I noticed it myself. Saved almost 40% of the yield."</p><div class="test-person"><div class="avatar"></div><div><div class="name">Ramesh Chaudhary</div><div class="role">Wheat & Tomato Farmer, Rajasthan</div></div></div></div>
+      <div class="test-card"><div class="test-stars">★★★★★</div><p>"I used to sell to the first trader who showed up. Now I check five mandis in one screen and always get a fairer rate."</p><div class="test-person"><div class="avatar"></div><div><div class="name">Sunita Patil</div><div class="role">Onion Grower, Maharashtra</div></div></div></div>
+      <div class="test-card"><div class="test-stars">★★★★★</div><p>"The AI told me to switch half my land to moong instead of paddy this season. Water use dropped and profit per acre went up."</p><div class="test-person"><div class="avatar"></div><div><div class="name">Harpreet Singh</div><div class="role">Farmer, Punjab</div></div></div></div>
+    </div>
+  </section>
+
+  <footer class="footer" id="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="brand"><div class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2v20M2 12c0-5.5 4.5-10 10-10M22 12c0 5.5-4.5 10-10 10"/></svg></div>Kisaan.AI</div>
+        <p>An intelligent farming and market platform helping every farmer decide with data, not guesswork.</p>
+      </div>
+      <div><h4>Product</h4><ul><li><a href="#">Crop AI</a></li><li><a href="#">Disease Detection</a></li><li><a href="#">Market Prices</a></li><li><a href="#">Weather</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="#">About</a></li><li><a href="#">Careers</a></li><li><a href="#">Press</a></li><li><a href="#">Contact</a></li></ul></div>
+      <div><h4>Resources</h4><ul><li><a href="#">Help Center</a></li><li><a href="#">API Docs</a></li><li><a href="#">Govt. Schemes</a></li><li><a href="#">Community</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Kisaan.AI — Final Year B.Tech CSE Major Project</span>
+      <span>Made for Indian agriculture 🌾</span>
+    </div>
+  </footer>
+</section>
+
+<!-- ============================================================
+     AUTH
+============================================================ -->
+<section id="screen-auth" class="screen">
+  <div class="auth-wrap">
+    <div class="auth-side">
+      <div class="brand">
+        <div class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2v20M2 12c0-5.5 4.5-10 10-10M22 12c0 5.5-4.5 10-10 10"/></svg></div>
+        Kisaan.AI
+      </div>
+      <div class="auth-quote">
+        <p>"Switching to AI-recommended crops raised my profit per acre by 31% in one season."</p>
+        <div class="who">— Harpreet Singh, Punjab</div>
+      </div>
+    </div>
+    <div class="auth-form-col">
+      <div class="auth-box">
+
+        <div id="authPanel-login">
+          <div class="auth-tabs">
+            <div class="auth-tab active" onclick="setAuthTab('login')">Log in</div>
+            <div class="auth-tab" onclick="setAuthTab('register')">Register</div>
+          </div>
+          <h2>Welcome back</h2>
+          <div class="sub">Log in to check today's recommendations.</div>
+          <div class="field"><label>Email or phone number</label><input type="text" placeholder="you@example.com"></div>
+          <div class="field"><label>Password</label><input type="password" placeholder="••••••••"></div>
+          <div class="auth-meta">
+            <label class="check-row"><input type="checkbox">Remember me</label>
+            <a href="#" style="color:var(--emerald);font-weight:600;" onclick="setAuthTab('forgot')">Forgot password?</a>
+          </div>
+          <button class="btn btn-primary btn-block" onclick="showScreen('screen-dashboard')">Log in</button>
+          <div class="divider">or continue with</div>
+          <button class="btn btn-outline btn-block">Continue with Google</button>
+          <div class="auth-foot">New here? <a onclick="setAuthTab('register')">Create an account</a></div>
+        </div>
+
+        <div id="authPanel-register" style="display:none;">
+          <div class="auth-tabs">
+            <div class="auth-tab" onclick="setAuthTab('login')">Log in</div>
+            <div class="auth-tab active" onclick="setAuthTab('register')">Register</div>
+          </div>
+          <h2>Create your account</h2>
+          <div class="sub">Tell us who you are on the platform.</div>
+          <div class="role-grid">
+            <div class="role-opt sel">🌾 Farmer</div>
+            <div class="role-opt">🛒 Buyer</div>
+            <div class="role-opt">🏭 Wholesaler</div>
+            <div class="role-opt">🏛️ Govt. Officer</div>
+          </div>
+          <div class="field"><label>Full name</label><input type="text" placeholder="Vandana Kumari"></div>
+          <div class="field"><label>Mobile number</label><input type="text" placeholder="+91 98XXX XXXXX"></div>
+          <div class="field-row">
+            <div class="field"><label>State</label><select><option>Rajasthan</option><option>Punjab</option><option>Maharashtra</option></select></div>
+            <div class="field"><label>District</label><input type="text" placeholder="Jaipur"></div>
+          </div>
+          <div class="field"><label>Password</label><input type="password" placeholder="Create a password"></div>
+          <button class="btn btn-primary btn-block" onclick="setAuthTab('otp')">Create account →</button>
+          <div class="auth-foot">Already registered? <a onclick="setAuthTab('login')">Log in</a></div>
+        </div>
+
+        <div id="authPanel-otp" style="display:none;">
+          <h2>Verify your number</h2>
+          <div class="sub">Code sent to +91 98XXX XXXXX. Valid for 5 minutes.</div>
+          <div class="otp-row" style="margin-bottom:22px;">
+            <input maxlength="1" type="text">
+            <input maxlength="1" type="text">
+            <input maxlength="1" type="text">
+            <input maxlength="1" type="text">
+          </div>
+          <button class="btn btn-primary btn-block" onclick="showScreen('screen-dashboard')">Verify & continue</button>
+          <div class="auth-foot">Didn't get a code? <a>Resend in 00:28</a></div>
+        </div>
+
+        <div id="authPanel-forgot" style="display:none;">
+          <h2>Reset password</h2>
+          <div class="sub">Enter your registered email — we'll send a reset link.</div>
+          <div class="field"><label>Email</label><input type="text" placeholder="you@example.com"></div>
+          <button class="btn btn-primary btn-block" onclick="setAuthTab('otp')">Send reset link</button>
+          <div class="auth-foot"><a onclick="setAuthTab('login')">← Back to log in</a></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     APP SHELL (Dashboard, Crop AI, Disease, Weather, Market)
+============================================================ -->
+<section id="screen-dashboard" class="screen">
+<div class="app-shell">
+  <aside class="sidebar">
+    <a class="brand" onclick="showScreen('screen-landing')" style="cursor:pointer;">
+      <div class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2v20M2 12c0-5.5 4.5-10 10-10M22 12c0 5.5-4.5 10-10 10"/></svg></div>
+      Kisaan.AI
+    </a>
+    <nav class="side-nav">
+      <div class="side-group-label">Overview</div>
+      <div class="side-link active" data-panel="panel-home" onclick="setPanel('panel-home',this)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10l9-7 9 7v10a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1z"/></svg>Dashboard
+      </div>
+      <div class="side-group-label">AI Tools</div>
+      <div class="side-link" data-panel="panel-crop" onclick="setPanel('panel-crop',this)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c4 3 6 6 6 10a6 6 0 01-12 0c0-4 2-7 6-10z"/></svg>Crop Recommendation
+      </div>
+      <div class="side-link" data-panel="panel-disease" onclick="setPanel('panel-disease',this)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M9 15c1 1 5 1 6 0"/></svg>Disease Detection
+      </div>
+      <div class="side-link" data-panel="panel-irrigation" onclick="setPanel('panel-irrigation',this)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 2c-3 5-6 8.5-6 12a6 6 0 0012 0c0-3.5-3-7-6-12z"/></svg>Smart Irrigation
+      </div>
+      <div class="side-group-label">Market</div>
+      <div class="side-link" data-panel="panel-weather" onclick="setPanel('panel-weather',this)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 18a4 4 0 000-8 5 5 0 00-9.6-1.5A4.5 4.5 0 007 18h10z"/></svg>Weather Forecast
+      </div>
+      <div class="side-link" data-panel="panel-market" onclick="setPanel('panel-market',this)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18M7 15l4-5 3 3 5-7"/></svg>Market Prices
+      </div>
+      <div class="side-link" data-panel="panel-sell" onclick="setPanel('panel-sell',this)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9h18l-1.5 10a2 2 0 01-2 2h-11a2 2 0 01-2-2L3 9zM8 9V6a4 4 0 018 0v3"/></svg>Sell Crops
+      </div>
+      <div class="side-group-label">Account</div>
+      <div class="side-link" data-panel="panel-profile" onclick="setPanel('panel-profile',this)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>Profile & Settings
+      </div>
+    </nav>
+    <div class="side-bottom">
+      <a class="side-user" style="cursor:pointer;" onclick="showScreen('screen-landing')">
+        <div class="avatar"></div>
+        <div><div class="name">Vandana Kumari</div><div class="role">Farmer · Jaipur, RJ</div></div>
+      </a>
+    </div>
+  </aside>
+
+  <div class="main-col">
+    <div class="topbar">
+      <div>
+        <h1 id="topbarTitle">Good morning, Vandana 👋</h1>
+        <div class="path" id="topbarPath">Here's what's happening on your farm today</div>
+      </div>
+      <div class="topbar-right">
+        <div class="search-box"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>Search fields, crops...</div>
+        <button class="icon-btn"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--forest)" stroke-width="2"><path d="M18 8a6 6 0 00-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.7 21a2 2 0 01-3.4 0"/></svg><span class="badge">3</span></button>
+        <div class="avatar" style="width:38px;height:38px;"></div>
+      </div>
+    </div>
+
+    <div class="content">
+
+      <!-- ============ DASHBOARD ============ -->
+      <div class="panel active" id="panel-home">
+        <div class="grid-4" style="margin-bottom:20px;">
+          <div class="card kpi-card">
+            <div class="kpi-top"><div class="kpi-ic" style="background:rgba(29,184,118,.12);">🌱</div></div>
+            <div class="kpi-val">18.4</div><div class="kpi-lbl">Acres under monitoring</div>
+            <div class="kpi-delta kpi-up">↑ 2 acres this season</div>
+          </div>
+          <div class="card kpi-card">
+            <div class="kpi-top"><div class="kpi-ic" style="background:rgba(58,175,224,.12);">💧</div></div>
+            <div class="kpi-val">64%</div><div class="kpi-lbl">Avg. soil moisture</div>
+            <div class="kpi-delta kpi-up">↑ 4% vs yesterday</div>
+          </div>
+          <div class="card kpi-card">
+            <div class="kpi-top"><div class="kpi-ic" style="background:rgba(214,163,43,.12);">💰</div></div>
+            <div class="kpi-val mono">₹4.82L</div><div class="kpi-lbl">Revenue this season</div>
+            <div class="kpi-delta kpi-up">↑ 18.2%</div>
+          </div>
+          <div class="card kpi-card">
+            <div class="kpi-top"><div class="kpi-ic" style="background:rgba(217,85,63,.12);">⚠️</div></div>
+            <div class="kpi-val">2</div><div class="kpi-lbl">Active crop alerts</div>
+            <div class="kpi-delta kpi-down">Needs attention</div>
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-bottom:20px;">
+          <div class="card card-pad">
+            <div class="card-head"><h3>Revenue & Yield Trend</h3><span class="link">Last 6 months</span></div>
+            <canvas id="chartRevenue" height="90"></canvas>
+          </div>
+          <div class="card card-pad">
+            <div class="card-head"><h3>Crop Health</h3></div>
+            <div style="display:flex;flex-direction:column;gap:16px;">
+              <div>
+                <div style="display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:6px;"><span>Wheat — Field A</span><span class="mono chip chip-green">Healthy</span></div>
+              </div>
+              <canvas id="chartHealth" height="150"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="card card-pad" style="grid-column:span 2;">
+            <div class="card-head"><h3>Recent Activity</h3><span class="link">View all</span></div>
+            <div class="activity-item"><div class="act-ic" style="background:rgba(29,184,118,.12);">🚜</div><div class="act-item-text"><div class="t1">Sowing completed — Field B (Moong)</div><div class="t2">2 hours ago</div></div></div>
+            <div class="activity-item"><div class="act-ic" style="background:rgba(58,175,224,.12);">💧</div><div class="act-item-text"><div class="t1">Irrigation cycle ran — 45 minutes</div><div class="t2">Today, 6:20 AM</div></div></div>
+            <div class="activity-item"><div class="act-ic" style="background:rgba(217,85,63,.12);">🔬</div><div class="act-item-text"><div class="t1">Leaf spot detected on Field C tomatoes</div><div class="t2">Yesterday</div></div></div>
+            <div class="activity-item"><div class="act-ic" style="background:rgba(214,163,43,.12);">📦</div><div class="act-item-text"><div class="t1">Sold 12 quintals wheat @ ₹2,240/qtl</div><div class="t2">2 days ago</div></div></div>
+          </div>
+          <div class="card card-pad">
+            <div class="card-head"><h3>Upcoming Tasks</h3></div>
+            <div class="task-item"><div class="task-dot" style="background:var(--danger);"></div><div><div class="t1">Apply fungicide — Field C</div><div class="t2">Due today</div></div></div>
+            <div class="task-item"><div class="task-dot" style="background:var(--warn);"></div><div><div class="t1">Soil test renewal</div><div class="t2">In 3 days</div></div></div>
+            <div class="task-item"><div class="task-dot" style="background:var(--emerald);"></div><div><div class="t1">Second irrigation — Field B</div><div class="t2">In 5 days</div></div></div>
+            <div class="task-item"><div class="task-dot" style="background:var(--sky);"></div><div><div class="t1">Fertilizer restock order</div><div class="t2">Next week</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ AI CROP RECOMMENDATION ============ -->
+      <div class="panel" id="panel-crop">
+        <div class="grid-2">
+          <div class="card card-pad form-card">
+            <div class="card-head"><h3>Field & Soil Parameters</h3><span class="chip chip-green">Model v3.2</span></div>
+            <div class="field-row">
+              <div class="field"><label>Soil type</label><select><option>Loamy</option><option>Sandy</option><option>Clay</option><option>Black cotton</option></select></div>
+              <div class="field"><label>Land size (acres)</label><input type="text" value="4.5"></div>
+            </div>
+            <div class="slider-row"><div class="sl-top"><span>Soil pH</span><b>6.8</b></div><input type="range" min="0" max="14" value="6.8" step="0.1"></div>
+            <div class="slider-row"><div class="sl-top"><span>Temperature (°C)</span><b>29°C</b></div><input type="range" min="0" max="50" value="29"></div>
+            <div class="slider-row"><div class="sl-top"><span>Rainfall (mm)</span><b>820mm</b></div><input type="range" min="0" max="2000" value="820"></div>
+            <div class="slider-row"><div class="sl-top"><span>Humidity</span><b>62%</b></div><input type="range" min="0" max="100" value="62"></div>
+            <button class="btn btn-primary btn-block" onclick="document.getElementById('cropResultCard').scrollIntoView({behavior:'smooth'})">Generate AI Recommendation →</button>
+          </div>
+
+          <div>
+            <div class="card card-pad">
+              <div class="card-head"><h3>NPK Levels</h3></div>
+              <canvas id="chartNPK" height="180"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:20px;" id="cropResultCard">
+          <div class="card result-card">
+            <div class="result-head">
+              <span class="result-badge">Top Recommendation</span>
+              <div class="result-crop">🌾 Basmati Rice</div>
+              <div class="result-sub">Best match for your loamy soil, current rainfall pattern and land size — ranked #1 of 6 viable crops.</div>
+            </div>
+            <div class="result-body">
+              <div class="result-stat"><div class="v">91.7%</div><div class="k">Confidence Score</div></div>
+              <div class="result-stat"><div class="v">4.8 t/acre</div><div class="k">Expected Yield</div></div>
+              <div class="result-stat"><div class="v">₹58,200</div><div class="k">Profit Prediction</div></div>
+              <div class="result-stat"><div class="v">120 days</div><div class="k">Crop Duration</div></div>
+            </div>
+            <div class="reasoning"><b>Why this crop:</b> Soil pH of 6.8 and 820mm rainfall fall within Basmati Rice's optimal range. Loamy soil retains the moisture this crop needs, and current mandi prices (₹2,140/qtl, ↑4.2%) improve the profit outlook over wheat or maize for this land size.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ DISEASE DETECTION ============ -->
+      <div class="panel" id="panel-disease">
+        <div class="grid-2">
+          <div class="card card-pad">
+            <div class="card-head"><h3>Upload Leaf / Crop Image</h3></div>
+            <div class="leaf-preview" style="margin-bottom:16px;">
+              <div class="scan-line"></div>
+              <span style="font-size:60px;">🍃</span>
+            </div>
+            <div class="upload-box" style="padding:22px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 16V4M6 10l6-6 6 6M4 20h16"/></svg>
+              <h4>Drag & drop or click to upload</h4>
+              <p>Supports JPG, PNG up to 10MB</p>
+              <button class="btn btn-outline btn-sm">Choose Image</button>
+            </div>
+          </div>
+
+          <div class="card card-pad">
+            <div class="card-head"><h3>Diagnosis Result</h3><span class="chip chip-red">Disease Detected</span></div>
+            <div style="display:flex;align-items:center;gap:16px;margin-bottom:18px;">
+              <svg class="ring pring" width="72" height="72" viewBox="0 0 120 120">
+                <circle class="bg" cx="60" cy="60" r="52"/>
+                <circle class="fg" cx="60" cy="60" r="52" stroke="#D9553F" stroke-dasharray="326.7" stroke-dashoffset="55"/>
+              </svg>
+              <div>
+                <div style="font-size:18px;font-weight:700;font-family:'Space Grotesk';">Early Blight</div>
+                <div style="font-size:12.5px;color:var(--muted);">Alternaria solani · Confidence 83.1%</div>
+              </div>
+            </div>
+            <ul class="disease-list">
+              <li><span class="num">1</span><div><b>Symptoms:</b> Dark concentric-ring spots on lower leaves, yellowing around lesions.</div></li>
+              <li><span class="num">2</span><div><b>Treatment:</b> Apply Mancozeb 75% WP @ 2.5g/litre, repeat every 10 days.</div></li>
+              <li><span class="num">3</span><div><b>Organic solution:</b> Neem oil spray (5ml/litre) every 5–7 days.</div></li>
+              <li><span class="num">4</span><div><b>Prevention:</b> Rotate crops, avoid overhead watering, remove infected leaves.</div></li>
+            </ul>
+            <button class="btn btn-primary btn-block" style="margin-top:16px;">Order Recommended Medicine</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ WEATHER ============ -->
+      <div class="panel" id="panel-weather">
+        <div class="weather-hero" style="margin-bottom:20px;">
+          <div class="weather-top">
+            <div>
+              <div style="font-size:13px;opacity:.85;">Jaipur, Rajasthan · Today, 20 Jul</div>
+              <div class="weather-temp">32°C</div>
+              <div style="font-size:13.5px;margin-top:4px;">Partly Cloudy · Feels like 35°C</div>
+            </div>
+            <div style="text-align:right;font-size:13px;">
+              <div>💧 Humidity: 58%</div>
+              <div style="margin-top:4px;">🌬️ Wind: 14 km/h</div>
+              <div style="margin-top:4px;">☔ Rain chance: 20%</div>
+            </div>
+          </div>
+          <div class="weather-days">
+            <div class="wday"><div class="d">Mon</div>☀️<div class="t">34°/22°</div></div>
+            <div class="wday"><div class="d">Tue</div>⛅<div class="t">32°/21°</div></div>
+            <div class="wday"><div class="d">Wed</div>🌦️<div class="t">29°/20°</div></div>
+            <div class="wday"><div class="d">Thu</div>⛈️<div class="t">27°/19°</div></div>
+            <div class="wday"><div class="d">Fri</div>🌦️<div class="t">28°/20°</div></div>
+            <div class="wday"><div class="d">Sat</div>⛅<div class="t">31°/21°</div></div>
+            <div class="wday"><div class="d">Sun</div>☀️<div class="t">33°/22°</div></div>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="card card-pad">
+            <div class="card-head"><h3>Temperature & Rainfall — 7 Days</h3></div>
+            <canvas id="chartWeather" height="110"></canvas>
+          </div>
+          <div class="card card-pad">
+            <div class="card-head"><h3>Weather Alerts</h3></div>
+            <div class="activity-item"><div class="act-ic" style="background:rgba(217,85,63,.12);">⛈️</div><div class="act-item-text"><div class="t1">Heavy rain expected Thursday</div><div class="t2">Delay pesticide spraying</div></div></div>
+            <div class="activity-item"><div class="act-ic" style="background:rgba(214,163,43,.12);">🌡️</div><div class="act-item-text"><div class="t1">Heat advisory — Mon & Sun</div><div class="t2">Irrigate early morning</div></div></div>
+            <div class="activity-item"><div class="act-ic" style="background:rgba(58,175,224,.12);">🌬️</div><div class="act-item-text"><div class="t1">Moderate winds this week</div><div class="t2">Safe for most field work</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ MARKET PRICES ============ -->
+      <div class="panel" id="panel-market">
+        <div class="tabbar">
+          <button class="active">All Crops</button>
+          <button>Grains</button>
+          <button>Vegetables</button>
+          <button>Fruits</button>
+        </div>
+        <div class="grid-2" style="margin-bottom:20px;">
+          <div class="card card-pad" style="grid-column:span 2;">
+            <div class="card-head">
+              <h3>Live Mandi Prices</h3>
+              <div class="search-box" style="width:220px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>Search market...</div>
+            </div>
+            <table>
+              <thead><tr><th>Crop</th><th>Market</th><th>Min ₹/qtl</th><th>Max ₹/qtl</th><th>Modal ₹/qtl</th><th>Trend</th></tr></thead>
+              <tbody>
+                <tr><td><div class="crop-cell"><div class="crop-ic" style="background:rgba(214,163,43,.15);">🌾</div>Wheat</div></td><td>Jaipur Mandi</td><td class="mono">2,180</td><td class="mono">2,310</td><td class="mono">2,240</td><td class="trend-up">↑ 3.4%</td></tr>
+                <tr><td><div class="crop-cell"><div class="crop-ic" style="background:rgba(29,184,118,.15);">🌾</div>Basmati Rice</td></td><td>Kota Mandi</td><td class="mono">2,020</td><td class="mono">2,260</td><td class="mono">2,140</td><td class="trend-up">↑ 4.2%</td></tr>
+                <tr><td><div class="crop-cell"><div class="crop-ic" style="background:rgba(217,85,63,.15);">🧅</div>Onion</td></td><td>Nashik Mandi</td><td class="mono">1,140</td><td class="mono">1,480</td><td class="mono">1,310</td><td class="trend-down">↓ 2.1%</td></tr>
+                <tr><td><div class="crop-cell"><div class="crop-ic" style="background:rgba(58,175,224,.15);">🌽</div>Maize</td></td><td>Udaipur Mandi</td><td class="mono">1,860</td><td class="mono">1,990</td><td class="mono">1,920</td><td class="trend-up">↑ 1.8%</td></tr>
+                <tr><td><div class="crop-cell"><div class="crop-ic" style="background:rgba(29,184,118,.15);">🫘</div>Moong Dal</td></td><td>Jaipur Mandi</td><td class="mono">6,900</td><td class="mono">7,340</td><td class="mono">7,120</td><td class="trend-up">↑ 5.6%</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="card card-pad">
+            <div class="card-head"><h3>Wheat Price Trend — 30 Days</h3></div>
+            <canvas id="chartMarket" height="120"></canvas>
+          </div>
+          <div class="card card-pad">
+            <div class="card-head"><h3>Nearby Markets</h3></div>
+            <div class="activity-item"><div class="act-ic" style="background:rgba(29,184,118,.12);">📍</div><div class="act-item-text"><div class="t1">Jaipur Mandi — 4.2 km</div><div class="t2">Best price for Wheat, Moong</div></div></div>
+            <div class="activity-item"><div class="act-ic" style="background:rgba(58,175,224,.12);">📍</div><div class="act-item-text"><div class="t1">Kota Mandi — 118 km</div><div class="t2">Best price for Basmati Rice</div></div></div>
+            <div class="activity-item"><div class="act-ic" style="background:rgba(214,163,43,.12);">📍</div><div class="act-item-text"><div class="t1">Udaipur Mandi — 245 km</div><div class="t2">Best price for Maize</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ SELL CROPS (placeholder panel) ============ -->
+      <div class="panel" id="panel-sell">
+        <div class="card card-pad" style="text-align:center;padding:60px;">
+          <div style="font-size:40px;margin-bottom:12px;">📦</div>
+          <h3 style="margin-bottom:8px;">Sell Crops module</h3>
+          <p style="color:var(--muted);font-size:13.5px;max-width:400px;margin:0 auto;">Listing form, image upload, buyer negotiation and order tracking — built on the same design system. Ask to extend the prototype and this screen ships next.</p>
+        </div>
+      </div>
+
+      <!-- ============ IRRIGATION (placeholder panel) ============ -->
+      <div class="panel" id="panel-irrigation">
+        <div class="grid-2">
+          <div class="card card-pad">
+            <div class="card-head"><h3>Soil Moisture — Field A</h3></div>
+            <canvas id="chartMoisture" height="150"></canvas>
+          </div>
+          <div class="card card-pad">
+            <div class="card-head"><h3>Automation Controls</h3></div>
+            <div class="task-item"><div><div class="t1">Motor Status</div><div class="t2">Field A, B</div></div><span class="chip chip-green" style="margin-left:auto;">Running</span></div>
+            <div class="task-item"><div><div class="t1">Tank Level</div><div class="t2">Main storage</div></div><span class="chip chip-amber" style="margin-left:auto;">68%</span></div>
+            <div class="task-item"><div><div class="t1">Next Auto-Cycle</div><div class="t2">Field C</div></div><span class="chip chip-blue" style="margin-left:auto;">6:00 AM</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ PROFILE (placeholder panel) ============ -->
+      <div class="panel" id="panel-profile">
+        <div class="card card-pad" style="max-width:600px;">
+          <div class="card-head"><h3>Profile & Settings</h3></div>
+          <div class="field"><label>Full name</label><input type="text" value="Vandana Kumari"></div>
+          <div class="field-row">
+            <div class="field"><label>Language</label><select><option>English</option><option>हिन्दी</option></select></div>
+            <div class="field"><label>Dark Mode</label><select><option>Off</option><option>On</option></select></div>
+          </div>
+          <button class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</section>
+
+<button class="chatbot-fab" onclick="alert('AI Chatbot panel — extend prototype on request')"><div class="pulse"></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.4 8.4 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.4 8.4 0 01-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.4 8.4 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></button>
+
+<!-- Dev-only screen switcher for demo/presentation purposes -->
+<div class="dev-switch">
+  <button onclick="showScreen('screen-landing')" id="dsw-landing" class="active">Landing</button>
+  <button onclick="showScreen('screen-auth')" id="dsw-auth">Auth</button>
+  <button onclick="showScreen('screen-dashboard')" id="dsw-dashboard">App</button>
+</div>
+
+<!-- Chart.js is loaded in <head>; charts.js defines initCharts(), app.js handles navigation -->
+<script src="js/charts.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
